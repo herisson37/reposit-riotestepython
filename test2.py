@@ -7,4 +7,4 @@ def funcTest(a, b):
         print ("Você vai passar nessa prova!")
         print("Você precisa passar!")
 
-funcTest(5, 4)
+funcTest(5, 4)a
