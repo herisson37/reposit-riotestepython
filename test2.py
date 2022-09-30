@@ -74,13 +74,13 @@ def desafioPalindromo(palavra):
     palavraInversa = ""
     for letra in palavra:
         palavraInversa += palavra[-1]
-        palavra.pop()
     if palavra == palavraInversa:
         print(True)
     else:
         print(False)
 
-desafioPalindromo(palavra1)
+#desafioPalindromo(palavra1)
+ 
     
 
 
