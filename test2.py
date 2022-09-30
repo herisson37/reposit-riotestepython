@@ -1,12 +1,12 @@
 from ast import For, If
 
-#def funcTest(a, b):
+# def funcTest(a, b):
 #    For n in range(5):
 #        print (n)
 
-#funcTest(5, 4)
+# funcTest(5, 4)
 
-#for a in range(5):
+# for a in range(5):
 #    print(a)
 
 def funcTest2(a):
@@ -52,4 +52,38 @@ def desafioOrdemAlfabetica(palavra1, palavra2):
         print(palavra2)
         print(palavra1)
 
-desafioOrdemAlfabetica("Xicara", "banana")
+#desafioOrdemAlfabetica("Xicara", "banana")
+
+#Lista Vazia
+lista = []
+
+#Lista numérica
+lista2 = [1, 2, 3]
+
+#Lista de listas
+listas = [[1, 2], [True, False]]
+
+#Invocação de trás pra frente quando for índice negativo
+#print(lista2[-3])
+
+palavra1 = "abacaxi"
+
+palavra2 = "raiar"
+
+def desafioPalindromo(palavra):
+    palavraInversa = ""
+    for letra in palavra:
+        palavraInversa += palavra[-1]
+        palavra.pop()
+    if palavra == palavraInversa:
+        print(True)
+    else:
+        print(False)
+
+desafioPalindromo(palavra1)
+    
+
+
+
+
+
