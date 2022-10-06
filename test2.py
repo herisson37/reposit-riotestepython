@@ -79,8 +79,35 @@ def desafioPalindromo(palavra):
     else:
         print(False)
 
-#desafioPalindromo(palavra1)
- 
+#desafioPalindromo(palavra1)´
+
+e_par = lambda x: x % 2 == 0
+
+def funcLambda(y):
+    if e_par(y):
+        print("Po, verdade verdadeira em irmão!")
+    else:
+        print("Mentira, é par não!")
+
+#funcLambda(1)
+
+list = ["Português", "Legislação", "Desenvolvimento", "Adm. de Servidores", "Adm. de SGBD", "Mato Grosso", "Banco de Dados", "Versionamento", "Engenharia de Software"]
+
+def testeRange(y):
+    for item in range(1,5,1):
+        print(item)
+            
+#testeRange()
+
+def desafioDivisor(max, divisor):
+    lista = []
+    for i in range(max, 1, -1):
+        if i % divisor == 0:
+            lista.append(i)
+    return print(lista)
+
+
+#desafioDivisor(21, 3)
     
 
 
