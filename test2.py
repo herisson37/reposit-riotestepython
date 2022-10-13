@@ -1,4 +1,5 @@
 from ast import For, If
+from re import X
 
 # def funcTest(a, b):
 #    For n in range(5):
@@ -109,6 +110,57 @@ def desafioDivisor(max, divisor):
 
 #desafioDivisor(21, 3)
     
+#############################################################################
+
+#Gerador Yield
+
+def geradorQuadrados():
+    for x in range(5):
+        yield x * x
+
+#for n in geradorQuadrados():
+#   print(n)
+
+
+#Expressão Geradora ()
+
+geradorQuadrados2 = (x*x for x in range(5))
+for n in geradorQuadrados2:
+    print(n)
+
+#Gerador de lista []
+
+#lista = [x for x in range(5)]
+#print (lista)
+
+listaCubo22 = [x*x*x for x in range(5)]
+#print(listaCubo22) 
+
+listaElaboradaPares = [x for x in range(10) if x % 2 == 0]
+#print(listaElaboradaPares)
+
+#Desafio geradir List Comprehensions
+
+celsius = [39.2, 36.5, 37.3, 37.8]
+fahrenheit = [(9 / 5 * x) + 32 for x in celsius]
+#print(fahrenheit)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
