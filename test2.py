@@ -125,9 +125,12 @@ def geradorQuadrados():
 #Expressão Geradora ()
 
 geradorQuadrados2 = (x*x for x in range(5))
-for n in geradorQuadrados2:
-    print(n)
 
+def funcGeradorQuadrados2():
+    for n in geradorQuadrados2:
+        print(n)
+
+#funcGeradorQuadrados2()
 #Gerador de lista []
 
 #lista = [x for x in range(5)]
@@ -139,30 +142,79 @@ listaCubo22 = [x*x*x for x in range(5)]
 listaElaboradaPares = [x for x in range(10) if x % 2 == 0]
 #print(listaElaboradaPares)
 
-#Desafio geradir List Comprehensions
+#Desafio gerador List Comprehensions
 
 celsius = [39.2, 36.5, 37.3, 37.8]
 fahrenheit = [(9 / 5 * x) + 32 for x in celsius]
 #print(fahrenheit)
 
 
+#############################################################################
 
+#Dicionários
 
+pt_eng = {'Cachorro': 'dog', 'Agua': 'Water'}
 
+#print(pt_eng)
 
+#print (pt_eng["Agua"])
 
+pt_eng["Cachorro"]
 
+pt_eng.get("Agua")
 
+#print(pt_eng.get("Aguaa"))
+#print(pt_eng["Cachorroa"])
+#pt_eng['Cachorro'] = 'Puppy'
+#print(pt_eng)
+#pt_eng['Cacharro'] = 'Puppy'
+#print(pt_eng["Cachorro"])
+#print(pt_eng["Cacharro"])
+#pt_eng['Cacharro'] = 'Little one'
 
+#print(pt_eng.pop('Cacharro'))
 
+len(pt_eng)
 
+'cachorro' in pt_eng
 
+valores = pt_eng.values()
 
+pt_eng.keys()
 
+iterador = iter(pt_eng)
 
+next(iterador)
 
+# for x in iterador:
+#     print(x, ':', pt_eng[x])
 
+# for x in sorted(pt_eng):
+#     print(x)
 
+texto12 = "O sabiá sabia de tudo."
 
+def histograma(texto):
+    h = dict()
 
+    for letra in texto:
+        if letra.lower() not in h:
+            h[letra.lower()] = 1
+        else:
+            h[letra.lower()] += 1
+    return h
 
+#print(histograma(texto12))
+    
+# Desafio
+
+def buscaChave(dicionario, valor):
+
+    for v in dicionario:
+        if dicionario[v] == valor:
+            return print(v)
+    return None
+
+dicio = {'Chave1': 10, 'Chave2': 20}
+
+buscaChave(dicio, 10)
