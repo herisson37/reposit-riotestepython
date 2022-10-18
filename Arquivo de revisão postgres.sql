@@ -1,0 +1,86 @@
+-- RASCUNHO
+
+DROP DATABASE banco_teste_concurso
+
+SELECT film_id, title, rental_rate FROM film
+WHERE rental_rate > (SELECT AVG(rental_rate) FROM film)
+
+CREATE TABLE T2(
+id_t1 SERIAL,
+nome varchar(50))
+
+INSERT INTO T1 (id_t2, nome)
+VALUES 
+(1, 'jaja'),
+(2, 'jeje'),
+(4, 'jj');
+
+INSERT INTO T1 (id, nome)
+VALUES 
+(, 'jiji')
+
+
+ALTER TABLE T2 ALTER COLUMN idd TO id
+
+---------------------------------------------------------
+
+--CRIAÇÃO DE USUÁRIOS
+
+CREATE USER USUARIO_TESTE [[W]]
+
+DROP USER POSTGRES
+
+ALTER USER POSTGRES RENAME TO POST_USER
+
+-- GRUPOS
+
+CREATE GROUP GRUPO_TESTE
+
+ALTER GROUP GRUPO_TESTE ADD USER USUARIO_TESTE
+
+ALTER GROUP GRUPO_TESTE DROP USER USUARIO_TESTE
+
+ALTER GROUP GRUPO_TESTE RENAME TO GRUPO_TESTE2
+
+-- ROLES
+
+CREATE ROLE ROLE_TESTE 
+
+DROP ROLE IF EXISTS ROLE_TESTE
+
+ALTER ROLE ROLE_TESTE WITH 
+
+-- Pipe que faz a concatenação '||'
+
+SELECT text 'abc' || 'def' AS "texto concatenado"
+
+-- JOIN
+
+SELECT * FROM T1 INNER JOIN T2 ON T1.id = T2.id
+
+SELECT * FROM T1 INNER JOIN T2 USING (id)
+
+
+SELECT * FROM T1 LEFT JOIN T2 ON T1.id = T2.id
+
+SELECT * FROM T1 LEFT JOIN T2 USING (id)
+
+
+SELECT * FROM T1 RIGHT JOIN T2 ON T1.id = T2.id
+
+
+SELECT * FROM T2 FULL JOIN T1 ON T1.id = T2.id
+
+
+SELECT * FROM T2 CROSS JOIN T1 ON T1.id = T2.id
+
+
+-- GROUP BY - HAVING
+
+
+SELECT RATING, AVG(LENGTH) FROM FILM 
+GROUP BY RATING 
+HAVING AVG(LENGTH) > 115
+
+
+

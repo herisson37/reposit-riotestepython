@@ -55,6 +55,8 @@ def desafioOrdemAlfabetica(palavra1, palavra2):
 
 #desafioOrdemAlfabetica("Xicara", "banana")
 
+#############################################################################
+
 #Lista Vazia
 lista = []
 
@@ -217,4 +219,58 @@ def buscaChave(dicionario, valor):
 
 dicio = {'Chave1': 10, 'Chave2': 20}
 
-buscaChave(dicio, 10)
+#buscaChave(dicio, 10)
+
+#############################################################################
+
+# TUPLAS
+
+tupl = ('a',)
+
+tupl1 = tuple()
+
+tupl2 = tuple('teste')
+
+tupl3 = tuple([1, 2, 3, 4, 5, 6])
+
+tupl3[0]
+
+tupl3[1:3]
+
+
+tupl4 = ('a',) + tupl3[1:]
+# print(tupl4)
+
+tupl * 3
+
+'a' in tupl4
+
+tuplaDiv = divmod(7, 3)
+# print(tuplaDiv)
+
+tuplaDiv1, tuplaDiv2 = divmod(7, 3)
+# print(tuplaDiv1)
+# print(tuplaDiv2)
+
+
+def testeVariosParametros(*variosValores):
+    ag = 0
+    for i in variosValores:
+        ag += i
+    print("\n")
+    print(ag)
+
+# testeVariosParametros(1, 2, 3, 4)
+
+# Desafio
+
+def media(*variosVal):
+    soma = 0
+    print(type(variosVal))
+    for v in variosVal:
+        soma += v
+    return soma / len(variosVal)
+
+#print(media(1, 10, 5, 50))
+        
+#############################################################################
