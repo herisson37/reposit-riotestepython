@@ -310,7 +310,7 @@ diretorioAtual = os.getcwd()
 os.path.exists('palavras.txt')
 os.path.isdir('palavras.txt')
 
-print(os.listdir(diretorioAtual))
+os.listdir(diretorioAtual)
 
 # Exceções
 
@@ -321,8 +321,6 @@ def testTratamento1():
             break
         except ValueError:
             print("O valor digitado é invalido, tente novamente.")
-
-# testTratamento1()
 
 def testTratamento2():
     try:
@@ -335,6 +333,3 @@ def testTratamento2():
         print("O valor digitado foi %d." % x)
     finally:
             print("FIM.")
-
-# testTratamento2()
-
