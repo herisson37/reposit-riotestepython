@@ -1,4 +1,5 @@
 from ast import For, If
+import os
 from re import X
 
 # def funcTest(a, b):
@@ -272,5 +273,68 @@ def media(*variosVal):
     return soma / len(variosVal)
 
 #print(media(1, 10, 5, 50))
+
+def calcfib(num):
+    x, y = 0, 1
+    while x < num:
+        print(x, end='')
+        x, y = y, x+y
+    print()
+
+#calcfib(1000)
+
         
 #############################################################################
+
+# Arquivos
+
+arq = open('palavras.txt')
+
+# print(arq.readline())
+# print(arq.readline())
+
+def forArq():
+    for a in arq:
+        print(a.strip())
+    
+# forArq()
+
+arq1 = open('palavras.txt', 'w')
+arq1.write('Agora estou escrevendo isso dentro do arquivo\n') 
+arq1.close() 
+
+'Para %d o valor é %g no dia %s' % (10, 5.43, 'dez')
+
+diretorioAtual = os.getcwd()
+
+os.path.exists('palavras.txt')
+os.path.isdir('palavras.txt')
+
+print(os.listdir(diretorioAtual))
+
+# Exceções
+
+def testTratamento1():
+    while True:
+        try:
+            x = int(input("Digite um valor inteiro: "))
+            break
+        except ValueError:
+            print("O valor digitado é invalido, tente novamente.")
+
+# testTratamento1()
+
+def testTratamento2():
+    try:
+        x = int(input("Digite número entre 1 e 10: "))
+        if not (x >= 1 and x <= 10):
+            raise ValueError
+    except ValueError:
+        print("O valor digitado é invalido, tente novamente.")
+    else:
+        print("O valor digitado foi %d." % x)
+    finally:
+            print("FIM.")
+
+# testTratamento2()
+
