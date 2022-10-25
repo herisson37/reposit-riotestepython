@@ -1,4 +1,5 @@
 from ast import For, If
+from genericpath import isdir
 import os
 from re import X
 
@@ -288,7 +289,7 @@ def calcfib(num):
 
 # Arquivos
 
-arq = open('palavras.txt')
+#arq = open('palavras.txt')
 
 # print(arq.readline())
 # print(arq.readline())
@@ -310,7 +311,7 @@ diretorioAtual = os.getcwd()
 os.path.exists('palavras.txt')
 os.path.isdir('palavras.txt')
 
-os.listdir(diretorioAtual)
+#print(os.listdir(diretorioAtual))
 
 # Exceções
 
@@ -333,3 +334,21 @@ def testTratamento2():
         print("O valor digitado foi %d." % x)
     finally:
             print("FIM.")
+
+# Crie uma função 'percorra' que lista todos os arquivos de um diretório de forma recursiva.
+
+def percorra(diretorio):
+    for arquivoOuDiretorio in os.listdir(diretorio):
+        caminho = diretorio + '\\' + arquivoOuDiretorio
+        if os.path.isfile(caminho):
+            print(caminho)
+        else:
+            percorra(caminho)
+
+print(os.getcwd())
+
+
+
+
+
+
