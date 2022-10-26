@@ -1,7 +1,12 @@
 from ast import For, If
+from datetime import date
 from genericpath import isdir
+import math
 import os
+import random
 from re import X
+import re
+import sys
 
 # def funcTest(a, b):
 #    For n in range(5):
@@ -289,7 +294,7 @@ def calcfib(num):
 
 # Arquivos
 
-#arq = open('palavras.txt')
+arq = open('palavras.txt')
 
 # print(arq.readline())
 # print(arq.readline())
@@ -345,8 +350,44 @@ def percorra(diretorio):
         else:
             percorra(caminho)
 
-print(os.getcwd())
+#percorra(os.getcwd())
 
+
+#############################################################################
+
+# Bibliotecas padrões
+
+dir(os)
+
+os.system('')
+
+
+sys.platform
+
+
+re.findall(r'\bf[a-z]*', 'faca bala laranja fusca') # Traz palavras que começam com F
+
+re.sub(r'\se\s', ' & ', 'João e Maria') # Substitui sempre que tiver um espaço + letra E + espaço
+
+
+math.cos(math.pi / 4)
+
+math.log(1024, 2)
+
+
+random.random()
+
+random.choice(['uva', 'pera', 'banana'])
+
+random.sample(range(100), 10)
+
+
+hoje = date.today()
+
+meuNasc = date(1995, 8, 7)
+
+tempo = hoje - meuNasc
+print(tempo)
 
 
 
