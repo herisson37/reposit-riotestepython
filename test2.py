@@ -1,4 +1,5 @@
 from ast import For, If
+import copy
 from datetime import date
 from genericpath import isdir
 import math
@@ -387,9 +388,77 @@ hoje = date.today()
 meuNasc = date(1995, 8, 7)
 
 tempo = hoje - meuNasc
-print(tempo)
+
+#############################################################################
+
+# Classes e Objetos
+
+class Tijolo:
+    """Legal, assim que cria classe em python."""
+
+class Retangulo:
+    """"Só um retângulo."""
+
+t1 = Tijolo()
+
+t1.x = 1
+t1.y = 2.0
+
+# print(t1.y)
+
+def trabObj(obj):
+    print(obj.x + obj.y)
 
 
+r = Retangulo()
+r.largura = 100
+r.altura = 50
+r.canto = Tijolo()
+r.canto.x = 10.0
+r.canto.y = 20.0 
+
+# help(Tijolo)
+
+def achaCentro(ret):
+    p = Tijolo()
+    p.x = ret.canto.x + ret.largura/2
+    p.y = ret.canto.y + ret.altura/2
+    return p
+
+p = achaCentro(r)
+# (p.x + p.y)
+
+# Alterando o valor do objeto a partir de uma função.
+
+def move_retangulo(ret, dist):
+    ret.canto.x += dist
+    ret.canto.y += dist
+
+move_retangulo(r, 10)
+
+r.canto.x
+r.canto.y
 
 
+s = copy.copy(r)
+s.altura += 15
+
+r.altura
+s.altura
+
+print(r is s)
+
+# Desafio
+
+class Circulo:
+    """"Classe criada pro desafio."""
+
+circ = Circulo()
+circ.raio = 2
+
+def calcula_area(c):
+    area = math.pi * c.raio**2
+    return area
+
+print(calcula_area(circ))
 
