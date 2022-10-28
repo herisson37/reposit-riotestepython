@@ -295,7 +295,7 @@ def calcfib(num):
 
 # Arquivos
 
-arq = open('palavras.txt')
+# arq = open('palavras.txt')
 
 # print(arq.readline())
 # print(arq.readline())
@@ -446,7 +446,7 @@ s.altura += 15
 r.altura
 s.altura
 
-print(r is s)
+r is s
 
 # Desafio
 
@@ -460,5 +460,5 @@ def calcula_area(c):
     area = math.pi * c.raio**2
     return area
 
-print(calcula_area(circ))
+calcula_area(circ)
 
