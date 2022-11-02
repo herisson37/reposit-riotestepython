@@ -460,5 +460,70 @@ def calcula_area(c):
     area = math.pi * c.raio**2
     return area
 
-calcula_area(circ)
+# calcula_area(circ)
 
+#############################################################################
+
+# Métodos
+
+class Retangulo2:
+
+    def __init__(self, largura=22, altura=13):
+        self.largura = largura
+        self.altura = altura
+
+    def imprimir(self):
+        print ("Largura: %d - Altura: %d" % (self.largura, self.altura))
+
+    def aumentar(self, cm):
+        self.altura += cm
+        self.largura += cm
+
+    def __str__(self):
+        return "Largura: %d - Altura: %d" % (self.largura, self.altura)
+
+    def __add__(self, outro):
+        if isinstance(outro, int):
+            return Retangulo2(self.altura + outro, self.largura + outro) 
+        elif isinstance(outro, Retangulo2):
+            return Retangulo2(self.altura + outro.altura, self.largura + outro.largura)
+        else:
+            raise ValueError
+
+r = Retangulo2(10, 20)
+
+r.aumentar(5)
+
+# r.imprimir()
+
+t = Retangulo2(1, 2)
+
+# t.imprimir()
+
+f = Retangulo2(50, 100)
+
+# print(f)
+
+p = Retangulo2(1, 2)
+
+p1 = p + 100
+# print(p1.altura)
+# print(p1.largura)
+
+n15 = Retangulo2(5, 6) + Retangulo2(2, 1) 
+
+# print(n15)
+
+# Desafio
+
+class Circulo:
+    def __init__(self, raio):
+        self.raio = raio
+
+    def area(self):
+        print(math.pi * self.raio**2)
+
+cir = Circulo(10)
+# cir.area()
+
+#############################################################################

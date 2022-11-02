@@ -120,4 +120,30 @@ COMMIT;
 -- DCL: DATA CONTROL LANGUAGE (Grant, Revoke)
 -- DTL: TRANSACTION CONTROL LANGUAGE (Rollback, Commit, Savepoint)
 
+-- FUNÇÕES
 
+CREATE [OR REPLACE] FUNCTION nome_funcao([parametro 1, parametro 2, parametro n]) RETURNS retorno_tipo_dado AS '
+	-- descricao da função;
+'
+LANGUAGE 'SQL';
+
+CREATE FUNCTION incrementar(INTEGER) 
+RETURNS INTEGER AS '
+	SELECT $1 + 1;
+'
+LANGUAGE 'SQL';
+
+-- TRIGGERS
+
+ CREATE TRIGGER name_trigger
+ BEFORE UPDATE ON name_table
+ FOR EACH ROW
+ EXECUTE FUNCTION name_function();
+ 
+ CREATE TRIGGER view_insert
+ INSTEAD OF INSERT ON my_view
+ FOR EACH ROW
+ EXECUTE FUNCTION view_insert_row();
+ 
+ 
+ 
