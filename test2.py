@@ -527,3 +527,66 @@ cir = Circulo(10)
 # cir.area()
 
 #############################################################################
+
+# Henrança
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+        print('Contruindo Pessoa')
+
+
+class PessoaFisica(Pessoa):
+    def __init__(self, CPF, nome='', idade=0):
+        super().__init__(nome, idade)
+        print('Contruindo Pessoa Física')
+        self.CPF = CPF
+
+    def getIdade(self):
+        return self.idade
+
+
+class PessoaJuridica(Pessoa):
+    def __init__(self, CNPJ, nome='', idade=0):
+        super().__init__(nome, idade)
+        print('Contruindo pessoa jurídica')
+        self.CNPJ = CNPJ
+
+pf = PessoaFisica('048.897.571-98', 'Herrisson', 27)
+
+# print(pf.nome)
+
+pj = PessoaJuridica(555, 'Empresa', 50)
+# print(pj.idade)
+
+isinstance(pf, Pessoa)
+
+isinstance(pf, PessoaFisica)
+
+isinstance(pf, PessoaJuridica)
+
+issubclass(PessoaFisica, Pessoa)
+
+issubclass(PessoaFisica, PessoaJuridica)
+
+# Herança Múltipla
+
+class Estudante:
+    def __init__(self, matricula):
+        print('Construindo Estudante')
+        self.matricula = matricula
+
+class PessoaFisica2(Pessoa, Estudante):
+    def __init__(self, CPF, nome='', idade=0, matricula=111):
+        Pessoa.__init__(self, nome, idade)
+        Estudante.__init__(self, matricula)
+        print('Contruindo Pessoa Física')
+        self.CPF = CPF
+
+pf2 = PessoaFisica2(333, 'Harry', 27, 12)
+
+# Iterador em classe
+
+class Reverso:
+    def __ini__(self, )
