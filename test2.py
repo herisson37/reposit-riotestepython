@@ -1,6 +1,7 @@
 from ast import For, If
 import copy
 from datetime import date
+import functools
 from genericpath import isdir
 import math
 import os
@@ -102,7 +103,7 @@ def funcLambda(y):
 
 #funcLambda(1)
 
-list = ["Português", "Legislação", "Desenvolvimento", "Adm. de Servidores", "Adm. de SGBD", "Mato Grosso", "Banco de Dados", "Versionamento", "Engenharia de Software"]
+listaMaterias = ["Português", "Legislação", "Desenvolvimento", "Adm. de Servidores", "Adm. de SGBD", "Mato Grosso", "Banco de Dados", "Versionamento", "Engenharia de Software"]
 
 def testeRange(y):
     for item in range(1,5,1):
@@ -534,13 +535,13 @@ class Pessoa:
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
-        print('Contruindo Pessoa')
+        # print('Contruindo Pessoa')
 
 
 class PessoaFisica(Pessoa):
     def __init__(self, CPF, nome='', idade=0):
         super().__init__(nome, idade)
-        print('Contruindo Pessoa Física')
+        # print('Contruindo Pessoa Física')
         self.CPF = CPF
 
     def getIdade(self):
@@ -550,7 +551,7 @@ class PessoaFisica(Pessoa):
 class PessoaJuridica(Pessoa):
     def __init__(self, CNPJ, nome='', idade=0):
         super().__init__(nome, idade)
-        print('Contruindo pessoa jurídica')
+        # print('Contruindo pessoa jurídica')
         self.CNPJ = CNPJ
 
 pf = PessoaFisica('048.897.571-98', 'Herrisson', 27)
@@ -586,7 +587,37 @@ class PessoaFisica2(Pessoa, Estudante):
 
 pf2 = PessoaFisica2(333, 'Harry', 27, 12)
 
-# Iterador em classe
 
-class Reverso:
-    def __ini__(self, )
+# Programação Funcional
+
+# Map
+
+numeross = [1, 2, 3, 4, 5, 6, 7]
+quadrado = list(map(lambda x: x**2, numeross))
+
+# Filter
+
+pares = list(filter(lambda x: x % 2 == 0, numeross))
+
+# Reduce
+# Precisa importar a biblioteca 'functools'
+
+somas = functools.reduce(lambda x, y: x + y, numeross)
+
+# Desafio
+
+class Animal:
+    def __init__(self, nome):
+        self.nome = nome
+
+class Gato(Animal):
+    def __init__(self, nome):
+        super().__init__(nome)
+
+    def miar(self):
+        print("%s está miando" % self.nome)
+
+g = Gato("Nina")
+
+g.miar()
+
