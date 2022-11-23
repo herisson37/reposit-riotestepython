@@ -165,6 +165,44 @@ CREATE INDEX nome_index ON nome_tabela (coluna);
 -- Comando ex: pg_dump.exe –host localhost –port 5432 –username postgres –format tar –file c:\nome_arquivo_que_sera_gerado.backup
 
 
+--> PL/pgSQL
+
+CREATE FUNCTION func_escopo() 
+RETURNS integer AS $$
+DECLARE 
+	quantidade integer := 30;
+BEGIN
+	RAISE NOTICE 'Aqui a quantidade é %', quantidade; -- A quantidade aqui é 30
+	quantidade := 50;
+	--
+	-- Criar um sub-bloco
+	--
+	DECLARE
+		quantidade integer := 80;
+	BEGIN
+		RAISE NOTICE 'Aqui a quantidade é %', quantidade; -- A quantidade aqui é 80
+	END;
+
+	RAISE NOTICE 'Aqui a quantidade é %', quantidade; -- A quantidade aqui é 50
+
+	RETURN quantidade;
+END;
+$$ LANGUAGE plpgsql;
+
+
+SELECT func_escopo();
+
+--> Cópia de tipos de dados
+
+id_aluno usuarios.id_usuario%TYPE; -- Dessa forma voce não precisa saber qual o tipo daquele campo
+
+--> FOR
+
+FOR i IN 1..10 LOOP
+	-- algum processamento
+	RAISE NOTICE 'i é %', i;
+END LOOP;
+
 
 
 
