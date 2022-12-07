@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Transacao
-import datetime
+from .form import TransacaoForm
 
 def home(request):
     data = {}
@@ -14,3 +14,9 @@ def listagem(request):
     data = {}
     data['transacoes'] = Transacao.objects.all()
     return render(request, 'contas/listagem.html', data)
+
+def nova_transacao(request):
+    form = TransacaoForm()
+    data = {}
+    data['form'] = form
+    return render(request, 'contas/form.html', form)

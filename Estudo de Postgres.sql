@@ -1,6 +1,6 @@
 -- RASCUNHO
 
-DROP DATABASE banco_teste_concurso
+DROP DATABASE postgres
 
 SELECT film_id, title, rental_rate FROM film
 WHERE rental_rate > (SELECT AVG(rental_rate) FROM film)
@@ -29,11 +29,11 @@ SELECT * FROM PRODUTOS
 
 --> CRIAÇÃO DE USUÁRIOS
 
-CREATE USER USUARIO_TESTE [[W]]
+CREATE USER USER_TEST [[W]]
 
-DROP USER POSTGRES
+DROP USER POST_USER
 
-ALTER USER POSTGRES RENAME TO POST_USER
+ALTER USER USER_TEST RENAME TO POST_USER
 
 --> GRUPOS
 
@@ -57,7 +57,7 @@ ALTER ROLE ROLE_TESTE WITH
 
 SELECT text 'abc' || 'def' AS "texto concatenado"
 
---> JOIN
+--> JOINS
 
 SELECT * FROM T1 INNER JOIN T2 ON T1.id = T2.id
 
@@ -118,7 +118,7 @@ COMMIT;
 -- DDL: DATA DEFINITION LANGUAGE (Drop, Create, Alter, Rename)
 -- DML: DATA MANIPULATION LANGUAGE (Select, Update, Insert, Delete)
 -- DCL: DATA CONTROL LANGUAGE (Grant, Revoke)
--- DTL: TRANSACTION CONTROL LANGUAGE (Rollback, Commit, Savepoint)
+-- TCL: TRANSACTION CONTROL LANGUAGE (Rollback, Commit, Savepoint)
 
 --> FUNÇÕES
 
@@ -158,7 +158,7 @@ CREATE INDEX nome_index ON nome_tabela (coluna);
 --> ARQUIVOS postgresql.conf e pg_hab.conf
 
 -- No arquivo "postgresql.conf" especifica-se o comportamento do servidor em relação a: Auditoria, autenticação, criptografia e entre outros.
--- Já o arquivo "pg_hba.conf" diz quais as máquinas ou servidores que poderão acessar o PostgreSQL, e a forma de autenticação (trust, md5, crypt e etc).
+-- Já o arquivo "pg_hba.conf" diz quais as máquinas ou- servidores que poderão acessar o PostgreSQL, e a forma de autenticação (trust, md5, crypt e etc).
 
 
 --> BACKUP é o "pg_dump" e pra RESTORE é o "pg_restore"

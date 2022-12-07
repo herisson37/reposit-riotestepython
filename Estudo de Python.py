@@ -529,7 +529,7 @@ cir = Circulo(10)
 
 #############################################################################
 
-# Henrança
+# Herança
 
 class Pessoa:
     def __init__(self, nome, idade):
