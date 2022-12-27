@@ -35,6 +35,8 @@ DROP USER POST_USER
 
 ALTER USER USER_TEST RENAME TO POST_USER
 
+CREATE USER superusuario_teste SUPERUSER INHERIT CREATEDB CREATEROLE;
+
 --> GRUPOS
 
 CREATE GROUP GRUPO_TESTE
@@ -154,7 +156,6 @@ EXECUTE FUNCTION view_insert_row();
 
 CREATE INDEX nome_index ON nome_tabela (coluna);
 
-
 --> ARQUIVOS postgresql.conf e pg_hab.conf
 
 -- No arquivo "postgresql.conf" especifica-se o comportamento do servidor em relação a: Auditoria, autenticação, criptografia e entre outros.
@@ -204,9 +205,17 @@ FOR i IN 1..10 LOOP
 END LOOP;
 
 
+--> EXTRAS
 
+-- Existem três abordagens fundamentais de backup no PostgreSQL: SQL dump, backup a nível de arquivos e arquivamento contínuo.
 
+-- "pg_ctl" é o nome da aplicação de administração do PostgreSQL que permite realizar operações como inicializar, parar e controlar um servidor PostgreSQL.
 
+-- "Information Schema" é o nome do recurso existente no PostgreSQL, que consiste num conjunto padrão SQL de visões de somente leitura (read-only views) que 
+-- contém informações sobre os objetos definidos numa base de dados.
 
- 
+-- "initdb" é o nome da aplicação de servidor do PostgreSQL que cria um novo database cluster.
+
+-- Com PostgreSQL é possível criar um banco de dados utilizando-se outro como template: se o nome do banco de dados que já exista for database01 e o nome do 
+-- banco a ser criado for database02, então o comando a ser usado será "CREATE DATABASE nome_do_banco_de_dados TEMPLATE template0;"
  
