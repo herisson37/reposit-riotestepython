@@ -10,9 +10,9 @@ from re import X
 import re
 import sys
 
-# def funcTest(a, b):
-#    For n in range(5):
-#        print (n)
+def funcTest(a, b):
+   for n in range(5):
+       print (n)
 
 # funcTest(5, 4)
 
@@ -51,7 +51,7 @@ def funcStrings():
     print("Método .replace: ")
     print(metodoReplace)
 
-#funcStrings()
+# funcStrings()
 
 
 def desafioOrdemAlfabetica(palavra1, palavra2):
@@ -76,7 +76,7 @@ lista2 = [1, 2, 3]
 listas = [[1, 2], [True, False]]
 
 #Invocação de trás pra frente quando for índice negativo
-#print(lista2[-3])
+# print("Elemento encontrado é: " + str(lista2[-3]))
 
 palavra1 = "abacaxi"
 
@@ -84,14 +84,18 @@ palavra2 = "raiar"
 
 def desafioPalindromo(palavra):
     palavraInversa = ""
+    contador = 1
     for letra in palavra:
-        palavraInversa += palavra[-1]
+        palavraInversa += palavra[-contador]
+        contador += 1
     if palavra == palavraInversa:
         print(True)
+        print(palavraInversa)
     else:
         print(False)
+        print(palavraInversa)
 
-#desafioPalindromo(palavra1)´
+# desafioPalindromo(palavra2)
 
 e_par = lambda x: x % 2 == 0
 
@@ -101,25 +105,26 @@ def funcLambda(y):
     else:
         print("Mentira, é par não!")
 
-#funcLambda(1)
+# funcLambda(10)
 
 listaMaterias = ["Português", "Legislação", "Desenvolvimento", "Adm. de Servidores", "Adm. de SGBD", "Mato Grosso", "Banco de Dados", "Versionamento", "Engenharia de Software"]
 
-def testeRange(y):
-    for item in range(1,5,1):
+def testeRange():
+    for item in range(2,10,1):
         print(item)
             
-#testeRange()
+# testeRange()
 
 def desafioDivisor(max, divisor):
     lista = []
     for i in range(max, 1, -1):
+        print(i)
         if i % divisor == 0:
             lista.append(i)
     return print(lista)
 
 
-#desafioDivisor(21, 3)
+# desafioDivisor(21, 3)
     
 #############################################################################
 
@@ -129,9 +134,12 @@ def geradorQuadrados():
     for x in range(5):
         yield x * x
 
-#for n in geradorQuadrados():
-#   print(n)
 
+# for n in geradorQuadrados():
+#     if not(n > 2): 
+#         print(n)
+#     else:
+#         break
 
 #Expressão Geradora ()
 
@@ -144,20 +152,25 @@ def funcGeradorQuadrados2():
 #funcGeradorQuadrados2()
 #Gerador de lista []
 
-#lista = [x for x in range(5)]
-#print (lista)
+listaTeste = [x*x for x in range(5)]
+# print (listaTeste)
 
-listaCubo22 = [x*x*x for x in range(5)]
-#print(listaCubo22) 
+
+listaCubo22 = [numero*numero*numero for numero in range(5)]
+# print(listaCubo22) 
 
 listaElaboradaPares = [x for x in range(10) if x % 2 == 0]
-#print(listaElaboradaPares)
+# print(listaElaboradaPares)
 
 #Desafio gerador List Comprehensions
 
 celsius = [39.2, 36.5, 37.3, 37.8]
 fahrenheit = [(9 / 5 * x) + 32 for x in celsius]
 #print(fahrenheit)
+numberAA = [1, 2, 3]
+# print(dir(numberAA))
+print([x for x in dir(print)])
+
 
 
 #############################################################################
@@ -174,20 +187,20 @@ pt_eng["Cachorro"]
 
 pt_eng.get("Agua")
 
-#print(pt_eng.get("Aguaa"))
-#print(pt_eng["Cachorroa"])
+# print(pt_eng.get("Agua"))
+# print(pt_eng["Cachorro"])
 #pt_eng['Cachorro'] = 'Puppy'
 #print(pt_eng)
-#pt_eng['Cacharro'] = 'Puppy'
-#print(pt_eng["Cachorro"])
+# pt_eng['Cachorro'] = 'Puppy'
+# print(pt_eng["Cachorro"])
 #print(pt_eng["Cacharro"])
-#pt_eng['Cacharro'] = 'Little one'
+pt_eng['Cacharro'] = 'Little one'
 
 #print(pt_eng.pop('Cacharro'))
 
 len(pt_eng)
 
-'cachorro' in pt_eng
+'Cachorro' in pt_eng
 
 valores = pt_eng.values()
 
@@ -215,37 +228,33 @@ def histograma(texto):
             h[letra.lower()] += 1
     return h
 
-#print(histograma(texto12))
+# print(histograma(texto12))
     
 # Desafio
 
 def buscaChave(dicionario, valor):
 
-    for v in dicionario:
-        if dicionario[v] == valor:
-            return print(v)
+    for chave in dicionario:
+        if dicionario[chave] == valor:
+            return print(chave)
     return None
 
 dicio = {'Chave1': 10, 'Chave2': 20}
 
-#buscaChave(dicio, 10)
+# buscaChave(dicio, 10)
 
 #############################################################################
 
 # TUPLAS
 
-tupl = ('a',)
+tupl = (2,)
+# print(type(tupl))
 
 tupl1 = tuple()
 
 tupl2 = tuple('teste')
 
 tupl3 = tuple([1, 2, 3, 4, 5, 6])
-
-tupl3[0]
-
-tupl3[1:3]
-
 
 tupl4 = ('a',) + tupl3[1:]
 # print(tupl4)
@@ -254,8 +263,8 @@ tupl * 3
 
 'a' in tupl4
 
-tuplaDiv = divmod(7, 3)
-# print(tuplaDiv)
+tuplaDiv = divmod(10, 3)
+print(tuplaDiv)
 
 tuplaDiv1, tuplaDiv2 = divmod(7, 3)
 # print(tuplaDiv1)
@@ -301,19 +310,20 @@ def calcfib(num):
 # print(arq.readline())
 # print(arq.readline())
 
-def forArq():
-    for a in arq:
-        print(a.strip())
+# def forArq():
+#     for a in arq:
+#         print(a.strip())
     
 # forArq()
 
 # arq1 = open('palavras.txt', 'w')
-arq1.write('Agora estou escrevendo isso dentro do arquivo\n') 
-arq1.close() 
+# arq1.write('Agora estou escrevendo isso dentro do arquivo\n') 
+# arq1.close() 
 
-'Para %d o valor é %g no dia %s' % (10, 5.43, 'dez')
+# print('Para %d o valor é %g no dia %s' % (10, 5.43, 'dez'))
 
 diretorioAtual = os.getcwd()
+# print(diretorioAtual)
 
 os.path.exists('palavras.txt')
 os.path.isdir('palavras.txt')
@@ -342,6 +352,8 @@ def testTratamento2():
     finally:
             print("FIM.")
 
+# testTratamento2()
+
 # Crie uma função 'percorra' que lista todos os arquivos de um diretório de forma recursiva.
 
 def percorra(diretorio):
@@ -361,7 +373,7 @@ def percorra(diretorio):
 
 dir(os)
 
-os.system('')
+os.system("")
 
 
 sys.platform
@@ -410,6 +422,7 @@ t1.y = 2.0
 def trabObj(obj):
     print(obj.x + obj.y)
 
+trabObj(t1)
 
 r = Retangulo()
 r.largura = 100
@@ -593,6 +606,7 @@ class PessoaFisica2(Pessoa, Estudante):
 # Map
 
 numeross = [1, 2, 3, 4, 5, 6, 7]
+
 quadrado = list(map(lambda x: x**2, numeross))
 
 # Filter
@@ -625,3 +639,24 @@ print(quadrado)
 print(pares)
 print(somas)
 
+
+p1=[50,40,30,20,10]
+
+p2=[]
+
+def fd(p1,p2):
+    for i in range(len(p1)):
+        p2.append(p1.pop())
+
+
+
+def fb(p1,p2):
+    if(len(p1)==0):
+        return
+    x=p1[len(p1)-1]
+    del p1[len(p1)-1]
+    fb(p1,p2)
+    p2.append(x)
+
+fb(p1, p2)
+print(p2)
